@@ -1,0 +1,67 @@
+
+@import '../../SCSS/variables.scss';
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(5px);
+    background: rgba(230,230,230,0.5);
+}
+
+.popupContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    border-radius: 7px;
+    padding: 28px;
+    background: $white;
+    box-shadow: 0 0 37px 0 rgba(225,230,255,0.54);
+}
+
+.title {
+    color: $primary;
+    font-family: Poppins;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 0.35px;
+    line-height: 30px;
+    margin-bottom: 16px;
+}
+.input {
+    width: 100%;
+    padding: 12px;
+    font-size: 20px;
+    border-radius: 7px;
+    color: $primary;
+    border: 1px solid rgba(75, 89, 123, 0.3);
+    outline: none;
+    font-family: Poppins;
+}
+.popupButtons {
+    display: flex;
+    align-self: flex-end;
+    margin-top: 16px;
+    gap: 8px;
+}
+
+.error {
+    align-self: flex-start;
+    margin-bottom: 8px;
+    color: #F1435B;
+}
+
+.radioButtons {
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    margin-top: 8px;
+    font-family: Poppins;
+    color: $primary;
+}

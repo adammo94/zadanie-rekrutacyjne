@@ -1,0 +1,45 @@
+@import '../../SCSS/variables.scss';
+
+.buttonWrapper {
+    height: 30px;
+    width: 30px;
+    min-height: 30px;
+    min-width: 30px;
+    border-radius: 15px;
+    background: $declineGradient;
+    box-shadow: 0 6px 12px 0 #FFC0C9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: $white;
+    &:hover {
+        background: $declineGradientHover;
+    }
+}
+
+.buttonWrapper.accept {
+    background: $acceptGradient;
+    box-shadow: 0 6px 12px 0 rgba(61,234,214,0.3);
+    &:hover {
+        background: $acceptGradientHover;
+    }
+
+}
+
+
+
+.decline {
+    background: linear-gradient(0deg, #F978A2 0%, #F1435B 100%);
+    box-shadow: 0 6px 12px 0 #FFC0C9;
+    &:hover {
+        background: linear-gradient(0deg, #A63447 0%, #F87197 100%);
+    }
+}
+
+.delete {
+    height: 4px;
+    width: 12px;
+    background-color: $white;
+    border-radius: 1px;
+}

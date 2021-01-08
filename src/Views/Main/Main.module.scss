@@ -1,0 +1,92 @@
+@import '../../SCSS/variables.scss';
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    overflow-y: auto;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 800px;
+    min-height: 990px;
+    max-height: 100vh;
+    overflow-y: auto;
+    border-radius: 7px;
+    padding: 72px;
+    background: $white;
+    box-shadow: 0 0 37px 0 rgba(225,230,255,0.54);
+
+
+}
+
+.people {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    min-width: 300px;
+    height: 80px;
+    min-height: 80px;
+    border-radius: 7px;
+    color: $white;
+    background: linear-gradient(0deg, #7176F7 0%, #CA75F1 100%);
+    box-shadow: 0 7px 19px 0 rgba(125,118,246,0.31);
+    font-family: Poppins;
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 0.44px;
+    line-height: 38px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.23);
+}
+
+.tree {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    border-left: $borderLeft;
+    margin-left: 150px;
+    padding: 53px 0 38px 0;
+}
+
+.outerButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 96px;
+    min-height: 96px;
+    width: 96px;
+    min-width: 96px;
+    border-radius: 48px;
+    margin-left: 150px;
+    transform: translate(-50%, 0);
+    background-color: $white;
+    box-shadow: 0 12px 12px 0 rgba(61,234,214,0.3);
+    cursor: pointer;
+}
+
+.innerButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 71px;
+    width: 71px;
+    border-radius: 36px;
+    color: $white;
+    background: $acceptGradient;
+    box-shadow: 0 12px 12px 0 rgba(61,234,214,0.3);
+    font-family: Rubik;
+    font-size: 56px;
+    font-weight: 900;
+    letter-spacing: 0.99px;
+    line-height: 80px;
+    text-shadow: 0 2px 4px #12C8BF;
+    &:hover {
+        background: $acceptGradientHover;
+    }
+}
