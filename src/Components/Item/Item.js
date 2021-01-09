@@ -1,4 +1,5 @@
 import React from 'react'
+
 import styles from './Item.module.scss'
 import Button from '../Button/Button'
 
@@ -14,19 +15,19 @@ export const Item = ({type, title, handleDelete, index, subitems, handleAddPopup
               <div className={styles.cardBar}></div>
               <div className={styles.cardContentWrapper}>
                 {
-                    type=='simple'
+                    type==='simple'
                     ? <>
-                        <div className={styles.cardSimpleTitle}> {title} </div>
+                        <div className={styles.cardSimpleTitle}>{title}</div>
                         <Button onClick={()=>handleDelete(parentIndex, null)}/>
                     </>
                     : <div className={styles.advancedCardWrapper}>
                         <div className={styles.advancedCardTitleFlex}>
-                            <div className={styles.advancedCardTitle}> <span>{title}</span> </div>
+                            <div className={styles.advancedCardTitle}> <span>{title}</span></div>
                             <Button onClick={()=>handleDelete(parentIndex, null)}/>
                         </div>
                         <div className={styles.itemWrapper}>
                             { subitems.map((subitem, index)=>
-                                <div className={styles.item}>
+                                <div className={styles.item} key={index}>
                                         <div className={styles.itemTreeText}>Or</div>
                                         <div className={styles.itemTreeNode}></div>
                                         <div className={styles.itemTitleContainer}>

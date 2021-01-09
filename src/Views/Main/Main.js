@@ -1,7 +1,9 @@
+import { useState } from 'react'
+
 import styles from './Main.module.scss'
 import Item from '../../Components/Item/Item'
 import Popup from '../../Components/Popup/Popup'
-import { useState } from 'react'
+
 
 export const Main = () => {
 
@@ -18,9 +20,7 @@ export const Main = () => {
 
   const handleDelete = (index, subIndex) => {
     let arrCopy = array
-    console.log(arrCopy)
     if (subIndex!==null) {
-      console.log(index, subIndex)
       arrCopy[index].children.splice(subIndex,1)
     } else {
       arrCopy.splice(index,1)
@@ -39,7 +39,6 @@ export const Main = () => {
   }
   const handleAddItem = (title, id, type) => {
     let arrCopy = array
-    console.log(arrCopy)
     if (id!==null) {
       arrCopy[index].children.push(title)
     }
@@ -54,14 +53,14 @@ export const Main = () => {
     <>
         <div className={styles.wrapper}>
         <div className={styles.card}>
-            <div className={styles.people}> People </div>
+            <div className={styles.people}>People</div>
             <div className={styles.tree}>
                 {array.map((item, index)=>
-                    <Item title={item.title} subitems={item.children} handleAddItem={handleAddItem} type={item.type} index={index} handleAddPopup={handleAddPopup} handleDelete={handleDelete}/>
+                    <Item title={item.title} subitems={item.children} handleAddItem={handleAddItem} type={item.type} index={index} handleAddPopup={handleAddPopup} handleDelete={handleDelete} key={index}/>
                 )}
             </div>
             <div className={styles.outerButton} onClick={()=> {setIndex(null); setNested(false); setPopupVisibility(true)}}>
-            <div className={styles.innerButton}> + </div>
+            <div className={styles.innerButton}>+</div>
             </div>
         </div>
         </div>

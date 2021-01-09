@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
-import styles from './Popup.module.scss'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faCheck, faTimes} from '@fortawesome/free-solid-svg-icons'
+
+import styles from './Popup.module.scss'
 import Button from '../Button/Button'
 
 export const Popup = ({handleAddItem, id, nested, handleClosePopup}) => {
@@ -14,8 +15,8 @@ export const Popup = ({handleAddItem, id, nested, handleClosePopup}) => {
         setTitle(e.target.value)
     }
 
-    const AddItem = (title, id) => {
-        if (title.length===0) {
+    const addItem = (title, id) => {
+        if (title.length === 0) {
             setError('This field cannot be empty')
         }
         else if (title.length>30){
@@ -47,18 +48,18 @@ export const Popup = ({handleAddItem, id, nested, handleClosePopup}) => {
                     !nested
                     ? <div className={styles.radioButtons}>
                         <span>
-                            <input type='radio' id='simple' value='simple' checked={type==='simple'} onClick={handleChangeRadio}/>
+                            <input type='radio' id='simple' value='simple' checked={type === 'simple'} onClick={handleChangeRadio}/>
                             <label for='simple'>simple</label>
                         </span>
                         <span>
-                            <input type='radio' id='advanced'  value='advanced' checked={type==='advanced'} onClick={handleChangeRadio}/>
+                            <input type='radio' id='advanced'  value='advanced' checked={type === 'advanced'} onClick={handleChangeRadio}/>
                             <label for='advanced'>advanced</label>
                         </span>
                     </div>
                     : null
                 }
                 <div className={styles.popupButtons}>
-                    <Button modifier={'accept'} onClick={()=>AddItem(title, id)}>
+                    <Button modifier={'accept'} onClick={()=>addItem(title, id)}>
                         <FontAwesomeIcon icon={faCheck}/>
                     </Button>
                     <Button modifier={'decline'} onClick={()=>handleClosePopup()}>
